@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sass пример</title>
+  <link rel="stylesheet" href="styles.css">
+   <script src="scripts.js"></script>
+</head>
+<body>
+  <div class="heading"> 
+    <header class="heading__header">
+      <div class="heading__header-social">
+        <svg xmlns="http://www.w3.org/2000/svg" class="heading__header-logo"  viewBox="0 0 100 100">
+          <polygon points="50,10 90,50 50,90 10,50" />
+          <image href="images/icon_vk.svg"/>
+        </svg>    
+        <svg xmlns="http://www.w3.org/2000/svg" class="heading__header-logo"  viewBox="0 0 100 100">
+          <polygon points="50,10 90,50 50,90 10,50" />
+          <image href="images/icon_tw.svg"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="heading__header-logo"  viewBox="0 0 100 100">
+          <polygon points="50,10 90,50 50,90 10,50" />
+          <image href="images/icon_ig.svg"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="heading__header-logo"  viewBox="0 0 100 100">
+          <polygon points="50,10 90,50 50,90 10,50" />
+          <image href="images/icon_fb.svg"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="heading__header-logo"  viewBox="0 0 100 100">
+          <polygon points="50,10 90,50 50,90 10,50" />
+          <image href="images/icon_ok.svg"/>
+        </svg>
+      </div>
+      <button class="heading__header-partner">Стать Партнером</button>
+    </header>         
+    <div class="heading__information">
+      <div class="heading__information-leftbox">
+        <img class="heading__information_sale" src="images/only_popup.svg">
+         <img class="heading__information_name" src="images/shopguide.svg">
+        <p class="heading__information-line">Загрузить</p>
+        <div class="heading__information-downloads">
+          <div class="heading__information-ios">
+            <img src="images/download_ios.svg">
+          </div>
+          <div class="heading__information-android">
+            <img src="images/download_android.svg">
+          </div>
+        </div>
+      </div>
+      <div class="heading__information-rightbox">
+        <img class="heading__information-phone" src="images/phone1.png">
+      </div>
+    </div>
+    <button class="heading__scroll-down">
+      <span>вниз</span> 
+      <img src="images/arrow_down.svg">
+      <span>вниз</span>
+    </button>
+  </div>
+        
+  <div  class="thirst-object">           
+    <div class="thirst-object__cards">
+      <div class="thirst-object__card"> 
+        <img src="images/like.svg">
+        <h3>Только лучшее</h3>
+        <h4>Всегда актуальные акции у вас в телефоне</h4>
+      </div>
+      <div  class="thirst-object__card"> 
+        <img src="images/geo.svg">
+        <h3>Всегда рядом</h3>
+        <h4>Находите ближайшие акции на карте рядом с вами</h4>
+      </div>
+      <div  class="thirst-object__card"> 
+        <img src="images/sheet.svg">
+        <h3>Уведомления</h3>
+        <h4>Подписывайтесь только на то, что вас интересует и всегда будьте в курсе новых акций.</h4>
+      </div>
+      <div  class="thirst-object__card"> 
+        <img src="images/bell.svg">
+        <h3>Каталог</h3>
+        <h4>Огромный каталог с информацией о магазинах, брендах и ТЦ всегда под рукой.</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="second-object">
+    <div class="second-object__content">
+     <div class="second-object__left">
+        <h2 class="second-object_buttonopacity">Избранное</h2>
+      </div>
+      <div class="second-object__image">
+        <img src="images/_phone2.png" class="second-object__image-main" alt="phone">
+        <img class="second-object__image-overlay" src="images/phone2_actions.jpg" alt="overlay">
+      </div>
+      <div class="second-object__right">
+       <div class="second-object__buttons">
+         <h2 class="second-object_buttonunderlined">Профиль Акции</h2>
+         <h2 class="second-object_buttonopacity">Подписки</h2>
+         <h2 class="second-object_buttonopacity">Карта</h2>
+         <h2 class="second-object_buttonopacity second-object__button--highlight">Моя Лента</h2>
+       </div>
+       <p>
+         Вы всегда получите полную информацию об акции: подробное описание, бренд,
+          магазины и торговые центры где проходит акция.<br><br>
+          Также доступна возможность сразу перейти на сайт товара и купить в рамках
+          действующей акции.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="third-object">
+    <div class="third-object__content">
+      <div class="third-object__text-sector">
+        <h2>Наши Акции</h2>
+        <p>Каждый день в Москве проходят распродажи. В акциях и скидках дня могут принимать участие любые группы товаров. Особенно популярны распродажи одежды и обуви, распродажи мебели, распродажи сумок.</p>
+      </div>
+      <div class="third-object__image-sector">
+        <img  src="images/_phone3_1.png" class="third-object__imagefirst">
+        <img  src="images/_phone3_2.png" class="third-object__imagesecond">
+      </div>
+    </div>
+  </div>
+
+  <div class="fourth-object">
+    <div>
+      <h1>Наши партнёры</h1>
+    </div>
+    <div class="fourth-object__carousel">
+      <div class="fourth-object__arrowleft">
+       <svg class="fourth-object__circle" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>circle-filled</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" fill="#7f2929" transform="translate(42.666667, 42.666667)">
+            <path d="M213.333333,3.55271368e-14 C331.15408,3.55271368e-14 426.666667,95.5125867 426.666667,213.333333 C426.666667,331.15408 331.15408,426.666667 213.333333,426.666667 C95.5125867,426.666667 3.55271368e-14,331.15408 3.55271368e-14,213.333333 C3.55271368e-14,95.5125867 95.5125867,3.55271368e-14 213.333333,3.55271368e-14 Z" id="Combined-Shape"/>
+        </g>
+    </g>
+        </svg>
+         <img src="images/arrow_left.svg" alt="left">
+      </div>
+      <div class="fourth-object__icons">
+        <div class="fourth-object__iconprada ">
+        <img src="images/logos/logo_prada.png">
+        </div>
+        <div class="fourth-object__icon"> 
+        <img src="images/logos/logo_nike.png">
+        </div>
+        <div class="fourth-object__icon">
+        <img src="images/logos/logo_cym.png">
+        </div>
+        <div class="fourth-object__icon">
+        <img src="images/logos/logo_adidas.png">
+        </div>
+        <div class="fourth-object__icon">
+        <img src="images/logos/logo_gum.png">
+        </div>
+        <div class="fourth-object__icon">
+        <img src="images/logos/logo_zara.png">
+        </div>
+        <div class="fourth-object__iconcarlo">
+        <img src="images/logos/logo_carlo.png">   
+        </div>         
+      </div>
+      <div class="fourth-object__arrowright">
+        <svg class="fourth-object__circle" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <title>circle-filled                    </title>
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="icon" fill="#7f2929" transform="translate(42.666667, 42.666667)">
+              <path d="M213.333333,3.55271368e-14 C331.15408,3.55271368e-14 426.666667,95.5125867 426.666667,213.333333 C426.666667,331.15408 331.15408,426.666667 213.333333,426.666667 C95.5125867,426.666667 3.55271368e-14,331.15408 3.55271368e-14,213.333333 C3.55271368e-14,95.5125867 95.5125867,3.55271368e-14 213.333333,3.55271368e-14 Z" id="Combined-Shape"/>
+            </g>
+          </g>
+        </svg>
+         <img src="images/arrow_right.svg" alt="right">
+      </div>
+    </div>
+    <div class="fourth-object__info">
+      <h6>Хотите стать партнёром?</h6>
+      <h6>Напишите нам и про ваши акции узнают все.</h6>
+      <button>СТАТЬ ПАРТНЕРОМ</button>
+    </div>
+  </div>
+          
+  <footer class="footer-object">         
+    <div class="footer-object__content">
+      <div>
+        <p>2016 © shopguide</p>
+      </div>
+      <div class="footer-object__links">
+        <span>политика конфиденциальности</span>
+        <span>правила пользования</span>
+      </div>
+    </div>
+    <div class="footer-object__social">
+      <button class="footer-object__button">
+        <img src="images/message-circle-dots-svgrepo-com.svg">
+        <p>Связаться с нами</p>
+      </button>
+    </div>
+  </footer>    
+</body>
+</html>

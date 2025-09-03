@@ -1,0 +1,846 @@
+body {
+  margin: 0;
+}
+
+// ===== Миксины =====
+$intermediate-width: 1023px;
+@mixin phone {
+  @media (max-width: #{$intermediate-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$intermediate-width}) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin bg-cover($url) {
+  background-image: url($url);
+  background-position-x: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin text($family, $size, $weight: normal, $style: normal, $transform: none, $color: null) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  text-transform: $transform;
+  @if $color {
+    color: $color;
+  }
+}
+
+// ===== Стили =====
+.heading {
+  @include bg-cover("images/bg.jpg");
+  height: 100%;
+  padding: 0 9.7%;
+  @include phone {
+    padding: 0;
+  }
+}
+
+.heading__header {
+  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+  max-height: 5vw;
+  @include flex-center;
+  justify-content: space-between;
+  margin-top: 53fr;
+  @include phone {
+    display: none;
+  }
+}
+
+.heading__header-social {
+  display: flex;
+}
+
+.heading__header-logo {
+  max-width: 5vw;
+  max-height: 5vw;
+  width: 100%;
+  height: 100%;
+  polygon {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 3;
+  }
+  image {
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+button {
+  cursor: pointer;
+  z-index: 3;
+}
+
+.heading__header-partner {
+  border: 3px solid white;
+  color: white;
+  background: transparent;
+  text-align: center;
+  @include flex-center;
+  position: relative;
+  padding: 1% 2%;
+  @include text('FuturaDemiC', 1.5vw, 600);
+}
+
+.heading__information {
+  display: flex;
+  padding: 0 6%;
+  @include phone {
+    padding: 40% 0;
+  }
+}
+
+.heading__information_name {
+  width: 100%;
+  @include phone {
+    width: 95%;
+  }
+}
+
+.heading__information_sale {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-self: right;
+  @include phone {
+    width: 62%;
+  }
+}
+
+.heading__information-rightbox {
+  width: 50%;
+  display: grid;
+  @include phone {
+    display: none;
+  }
+
+  .heading__information-phone {
+    width: 30vw;
+    z-index: 1;
+    position: relative;
+    top: 8.6vw;
+    @include phone {
+      display: none;
+    }
+  }
+
+  span {
+    @include text('Montserrat', 5.9vw, 700, normal, none, white);
+    line-height: 100%;
+    letter-spacing: 0;
+  }
+
+  img {
+    width: 50%;
+    height: 100%;
+    justify-self: right;
+    display: flex;
+  }
+}
+
+.heading__information-leftbox {
+  width: 50%;
+  text-align: center;
+  display: flow;
+  margin: auto;
+  @include phone {
+    width: 100%;
+  }
+
+  .header-top_informationphoto {
+    max-width: 450px;
+    max-height: 900px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+    top: 20%;
+    @include phone {
+      display: none;
+    }
+  }
+
+  span {
+    @include text('Montserrat', 5.9vw, 700, normal, none, white);
+    line-height: 100%;
+    letter-spacing: 0;
+    @include phone {
+      font-size: 15vw;
+    }
+  }
+}
+
+.heading__information-line {
+  @include flex-center;
+  text-align: center;
+  @include text('Montserrat', 1vw, 700, normal, none, white);
+  @include phone {
+    font-size: 3vw;
+  }
+}
+
+.heading__information-line::before,
+.heading__information-line::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid white;
+  margin: 0;
+}
+
+.heading__information-line::before{
+    margin: 0 0.5vw 0 0;
+}
+.heading__information-line::after{
+    margin: 0 0 0 0.5vw;
+}
+
+.heading__information-downloads {
+  display: flex;
+  justify-content: space-between;
+  @include phone {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.heading__information-ios,
+.heading__information-android {
+  width: 45%;
+  img {
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    @include phone {
+      margin-bottom: 10%;
+    }
+  }
+  @include phone {
+    width: 50%;
+  }
+}
+
+header img {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg);
+  object-fit: contain;
+  display: block;
+}
+
+.heading__scroll-down {
+  @include flex-center;
+  background-color: #29D3D1;
+  border: 0;
+  border-radius: 1vw;
+  width: 13vw;
+  margin: auto;
+  align-content: center;
+  z-index: 10;
+  position: relative;
+  top: 1.3vw;
+  color: white;
+
+  img {
+    align-content: center;
+    width: 1.5vw;
+    margin: 0.7vw;
+  }
+  span {
+    font-size: 1vw;
+    margin: auto 0;
+    font-family: 'Montserrat';
+  }
+
+  @include phone {
+    width: 70%;
+    top: 4vw;
+    border-radius: 3vw;
+    img {
+      width: 6vw;
+      margin: 3vw;
+      top: 5vw;
+    }
+    span {
+      font-size: 6vw;
+    }
+  }
+}
+
+.thirst-object {
+  padding: 9.7%;
+  position: relative;
+  z-index: 2;
+  background-color: white;
+}
+
+.thirst-object__cards {
+  display: flex;
+  @include phone {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.d18 {
+  display: flex;
+}
+
+.thirst-object__card {
+  width: 25%;
+  text-align: center;
+  margin: 1%;
+  @include phone {
+    width: 90%;
+  }
+
+  img {
+    width: 40%;
+    height: 40%;
+    @include phone {
+      width: 25%;
+      height: 25%;
+    }
+  }
+
+  h4 {
+    @include text('FuturaDemiC', 1.1vw, 600, normal, none, black);
+    text-align: center;
+    @include phone {
+      font-size: 4.5vw;
+    }
+  }
+
+  h3 {
+    @include text('Montserrat', 2vw, 600, normal, uppercase);
+    line-height: 100%;
+    letter-spacing: 0;
+    @include phone {
+      font-size: 8vw;
+    }
+  }
+}
+// ===== SECOND OBJECT =====
+.second-object {
+  height: 30vw;
+  margin: 6% 0;
+  background-color: #29D3D1;
+  @include flex-center;
+  align-items: flex-start;
+  position: relative;
+
+  @include phone {
+    display: none;
+  }
+}
+
+.second-object__content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.second-object__left {
+  @include flex-column;
+  justify-content: flex-start;
+  margin: 5% 0 0 0.5%;
+
+  h2 {
+    @include text('Montserrat', 1.7vw, 700, normal, uppercase, white);
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.second-object__image {
+  position: relative;
+  max-height: 40vw;
+  height: 100%;
+  width: 30vw;
+}
+
+.second-object__image-main {
+  max-height: 39vw;
+  max-width: 30vw;
+  height: 100%;
+  width: 40vw;
+  position: relative;
+  top: -4vw;
+}
+
+.second-object__image-overlay {
+  height: 30vw;
+  position: absolute;
+  left: 5vw;
+  width: 20vw;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.second-object__right {
+  @include flex-column;
+  justify-content: flex-start;
+  gap: 15px;
+  margin: 5% 0 0 0;
+
+  p {
+    margin: 8% 0 0 0;
+    @include text('Futura PT', 1.3vw, 400, normal, none, white);
+    line-height: 30px;
+    letter-spacing: 0;
+    width: 70%;
+  }
+}
+
+.second-object__buttons {
+  display: flex;
+
+  .second-object__button--highlight {
+    padding-right: 0;
+  }
+
+  h2 {
+    @include text('Montserrat', 1.7vw, 700, normal, uppercase, white);
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+    padding-right: 8%;
+  }
+}
+
+.second-object_buttonopacity {
+  opacity: 40%;
+  color: white;
+}
+
+.second-object_buttonunderlined {
+  text-decoration: underline solid white;
+  text-decoration-thickness: 0.3vw;
+  text-underline-offset: 1vw;
+  color: white;
+}
+
+// ===== THIRD OBJECT =====
+.third-object {
+  padding: 12% 0 0 0;
+  place-content: end;
+  height: auto;
+
+  @include phone {
+    padding: 0;
+  }
+}
+
+.third-object__content {
+  display: flex;
+  padding: 0 9.7%;
+  height: 25vw;
+  background-color: #EDECEC;
+  justify-content: space-between;
+
+  @include phone {
+    background-color: white;
+    justify-content: center;
+    height: auto;
+  }
+
+  .third-object__text-sector {
+    width: 50%;
+    margin: 5vw 0 0 2.5vw;
+
+    h2 {
+      @include text('Montserrat', 2vw, 700, normal, uppercase, black);
+      line-height: 100%;
+      letter-spacing: 0;
+    }
+
+    p {
+      @include text('Futura PT', 1.5vw, 400, normal, none, black);
+      line-height: 30px;
+      letter-spacing: 0;
+    }
+
+    @include phone {
+      margin: 0;
+      width: 100%;
+      height: auto;
+
+      h2 {
+        font-size: 9vw;
+        text-align: center;
+      }
+
+      p {
+        font-size: 5.5vw;
+        text-align: center;
+      }
+    }
+  }
+
+  .third-object__image-sector {
+    width: 50%;
+    @include flex-center;
+    justify-content: end;
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  .third-object__imagefirst {
+    width: 30vw;
+    height: 34vw;
+    position: relative;
+    top: -8vw;
+    left: 5.4vw;
+    z-index: 2;
+  }
+
+  .third-object__imagesecond {
+    width: 30vw;
+    height: 32vw;
+    position: relative;
+    top: -9vw;
+    z-index: 1;
+  }
+}
+
+// ===== FOURTH OBJECT =====
+.fourth-object__carousel {
+  @include flex-center;
+  background-color: #EB645A;
+  padding: 0 9.7%;
+}
+
+.fourth-object__arrowleft,
+.fourth-object__arrowright {
+  @include flex-center;
+  transition: background 0.3s;
+  opacity: 40%;
+
+  @include phone {
+    @include flex-center;
+    position: absolute;
+  }
+}
+
+.fourth-object__arrowleft {
+  @include phone {
+    left: 5vw;
+  }
+}
+
+.fourth-object__arrowright {
+  @include phone {
+    right: 5vw;
+  }
+}
+
+.fourth-object__circle {
+  width: 2.5vw;
+
+  @include phone {
+    width: 10vw;
+    z-index: 1;
+  }
+}
+
+.fourth-object__arrowleft img {
+  width: 0.6vw;
+  height: auto;
+  position: relative;
+  left: -1.6vw;
+
+  @include phone {
+    z-index: 2;
+    width: 3vw;
+    left: -7vw;
+  }
+}
+
+.fourth-object__arrowright img {
+  width: 0.6vw;
+  height: auto;
+  position: relative;
+  left: -1.5vw;
+
+  @include phone {
+    z-index: 2;
+    width: 3vw;
+    left: -6vw;
+  }
+}
+
+.fourth-object__arrowleft:hover,
+.fourth-object__arrowright:hover {
+  opacity: 100%;
+}
+
+.fourth-object__icons {
+  @include flex-center;
+  scroll-behavior: smooth;
+
+  @include phone {
+    width: auto;
+  }
+
+  img {
+    width: 90%;
+    opacity: 30%;
+  }
+}
+
+.fourth-object__icons img:hover {
+  opacity: 100%;
+}
+
+.fourth-object {
+  h1 {
+    padding-top: 4vw;
+    @include flex-center;
+    font-size: 3vw;
+    color: red;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+
+    @include phone {
+      font-size: 12vw;
+      text-align: center;
+    }
+  }
+
+  h6 {
+    @include text('Futura PT', 1vw, 400, normal, none, black);
+    @include flex-center;
+    margin: 0.5vw 0;
+
+    @include phone {
+      font-size: 5vw;
+      text-align: center;
+      margin: 2vw 0;
+    }
+  }
+
+  button {
+    background-color: #29D3D1;
+    border: 1px;
+    border-radius: 0.5vw;
+    color: white;
+    width: 16vw;
+    font-size: 0.8vw;
+    margin: 1.2vw auto;
+    padding: 1.5vw 0;
+
+    @include phone {
+      font-size: 3.5vw;
+      width: 100%;
+      text-align: center;
+      padding: 3vw 0;
+    }
+  }
+
+  .fourth-object__info {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+
+    @include phone {
+      padding: 10vw;
+    }
+  }
+}
+
+.fourth-object__iconprada,
+.fourth-object__iconcarlo,
+.fourth-object__icon {
+  @include flex-center;
+  align-content: center;
+  padding: 2vw 0.5vw;
+}
+
+.fourth-object__iconprada {
+  width: 15%;
+  
+  @include phone {
+    width: 35vw;
+  }
+}
+
+.fourth-object__iconcarlo {
+  width: 20%;
+  @include phone {
+    width: 35vw;
+  }
+}
+
+.fourth-object__icon {
+  width: 10%;
+  
+  @include phone {
+    width: 35vw;
+  }
+}
+
+// ===== FOOTER =====
+.footer-object__links {
+  display: flex;
+
+  @include phone {
+    display: grid;
+  }
+}
+
+footer {
+  display: flex;
+}
+
+.footer-object {
+  @include bg-cover("images/bg.jpg");
+  background-position-y: -30vw;
+  padding: 3vw 9.7%;
+  align-content: center;
+  justify-content: space-between;
+
+  @include phone {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 0;
+    background-position-y: center;
+  }
+}
+
+.footer-object__content {
+  align-content: center;
+
+  p,
+  span {
+    opacity: 50%;
+    @include text('Montserrat', 1.1vw, 400, normal, uppercase, white);
+
+    @include phone {
+      font-size: 3vw;
+      text-align: center;
+    }
+  }
+
+  p{
+    color: #F6F6F6;
+  }
+  span {
+    padding-right: 4vw;
+    color: #B5B5B5;
+
+    @include phone {
+      padding-right: 0;
+    }
+  }
+
+  @include phone {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.footer-object__social {
+  display: flex;
+  margin: auto 0;
+  justify-content: end;
+
+  img {
+    width: 2.5vw;
+    height: 2.5vw;
+
+    @include phone {
+      width: 1.5vw;
+      height: 1.5vw;
+    }
+  }
+
+  @include phone {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  button {
+    @include phone {
+      justify-content: center;
+      width: auto;
+      height: 80%;
+    }
+  }
+}
+
+.footer-object__button {
+  @include flex-center;
+  background: transparent;
+  border: 0.1vw solid white;
+
+  @include phone {
+    margin: 2vw 0;
+  }
+
+  p {
+    @include text('Montserrat', 1.1vw, 400, normal, uppercase, white);
+    padding-right: 0.2vw;
+    white-space: nowrap;
+
+    @include phone {
+      font-size: 3vw;
+    }
+  }
+
+  img {
+    width: 20%;
+    padding: 0.2vw;
+
+    @include phone {
+      width: 10vw;
+      height: 5vw;
+    }
+  }
+}
+
+// ===== FONTS =====
+@font-face {
+  font-family: 'FuturaDemiC';
+  src: url('../fonts/futurademic-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/futurabookc-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
